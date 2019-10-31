@@ -584,7 +584,7 @@
  * Check and Radio buttons *
  ***************************/
 
- @mixin check($t, $c:white, $tc:white) {
+ @mixin check($t, $c:white, $tc:$checkradio_fg_color) {
   // Check/Radio drawing function
   //
   // $t:    check/radio type,
@@ -625,9 +625,8 @@
   @if $t==backdrop {
     -gtk-icon-effect: dim;
 
-    background-color: if($_checked, _backdrop_color($c), $bg_color);
-    border-color: $_dim_border_color;
-    box-shadow: 0 1px transparentize(black, 0.95);
+    background: if($_checked, lighten($checkradio_bg_color, 2%), $backdrop_bg_color);
+    box-shadow: none;
     color: $tc;
   }
 

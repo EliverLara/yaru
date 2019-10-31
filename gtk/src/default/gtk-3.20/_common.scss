@@ -2961,7 +2961,7 @@ radio {
                             (":backdrop", "backdrop"),
                             (":backdrop:disabled", 'backdrop-insensitive') {
           &#{$state} {
-            @include check($t, $checkradio_bg_color);
+            @include check($t, $checkradio_bg_color, $checkradio_fg_color);
           }
         }
       }
