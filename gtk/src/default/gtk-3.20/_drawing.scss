@@ -597,7 +597,6 @@
   $_checked: $c == $checkradio_bg_color;
   $_border_color: if($_checked, $c, $alt_borders_color);
   $_dim_border_color: transparentize($_border_color, if($variant == 'light', 0.3, 0.7));
-  $_dim_background: if($variant == 'light', $dark_fill, $slate);
 
   @if $t==normal  {
     background-clip: if($_checked, border-box, padding-box);
