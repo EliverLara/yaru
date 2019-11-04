@@ -2961,7 +2961,7 @@ radio {
                             (":backdrop", "backdrop"),
                             (":backdrop:disabled", 'backdrop-insensitive') {
           &#{$state} {
-            @include check($t, $checkradio_bg_color, $checkradio_fg_color);
+            @include check($t, $checkradio_bg_color, $checkradio_fg_color, $checked: true);
           }
         }
       }
@@ -2996,6 +2996,7 @@ radio {
       color: inherit;
       border-color: currentColor;
     }
+    &:indeterminate:hover { color: $checkradio_fg_color; border-color: $checkradio_bg_color; }
   }
 }
 
@@ -3053,15 +3054,9 @@ treeview.view radio {
 
       @if $variant == 'light' { border-color: $selected_borders_color; }
     }
-
-    &:disabled {
-      //color: $insensitive_fg_color;
-
-      //&:backdrop { color: $backdrop_insensitive_color; }
-    }
   }
 
-  &:backdrop { &:selected, & { color: $backdrop_fg_color; }}
+  &:backdrop { &:selected, & { color: $backdrop_fg_color; } }
 }
 
 treeview.view radio:selected { &:focus, & { @extend %radio; }} // This is a workaround
